@@ -1,0 +1,68 @@
+$color: #fff;
+$bg-color: #111;
+body {
+  font: {
+    family: sans-serif;
+    size: 30px;
+  }
+  background: $bg-color;
+  color: $color;
+}
+@mixin grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+@mixin button($direction, $col1, $col2) {
+  text-decoration: none;
+  background: linear-gradient($direction, $col1, $col2);
+  padding: 15px 64px;
+  color: $color;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+@mixin center {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+@mixin gradient-text($direction, $col1, $col2) {
+  background: linear-gradient($direction, $col1, $col2);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.container {
+  @include grid;
+  .section {
+    background-color: #0c171a;
+    @include center;
+    &-content {
+      h1 {
+        @include gradient-text(to right, blue, red);
+      }
+      p {
+        a {
+          @include button(to bottom right, red, blue);
+        }
+      }
+    }
+  }
+  .other-section {
+    @extend .section;
+    background-color: #0c101a;
+    h1 {
+      @include gradient-text(to right, purple, orange);
+    }
+    p {
+      a {
+        @include button(to bottom right, orange, purple);
+      }
+    }
+  }
+}
