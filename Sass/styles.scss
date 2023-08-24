@@ -56,12 +56,16 @@ body {
   .other-section {
     @extend .section;
     background-color: #0c101a;
+
     h1 {
       @include gradient-text(to right, purple, orange);
     }
     p {
       a {
         @include button(to bottom right, orange, purple);
+      }
+      &:hover a {
+        @include button(to bottom right, purple, orange);
       }
     }
   }

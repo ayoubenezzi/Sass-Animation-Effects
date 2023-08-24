@@ -55,4 +55,15 @@ body {
   -moz-border-radius: 30px;
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
+}
+.container .other-section p:hover a {
+  text-decoration: none;
+  background: linear-gradient(to bottom right, purple, orange);
+  padding: 15px 64px;
+  color: #fff;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
 }/*# sourceMappingURL=styles.css.map */
